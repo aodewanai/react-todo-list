@@ -1,15 +1,23 @@
 import "./../App.css";
 import React from "react";
+import propTypes from "prop-types";
 import TodoItem from "./TodoItem";
 
 function TodoList(props) {
+  
   return (
-    <div className="TodoList">
+    <ul className="list-group">
       {props.todos.map((todo, i) => {
-        return <TodoItem todo={todo} key={todo.id} i={i}/>;
+        return (
+          <TodoItem todo={todo} key={todo.id} i={i} />
+        );
       })}
-    </div>
+    </ul>
   );
 }
+
+TodoList.propTypes = {
+  todos: propTypes.arrayOf(propTypes.object).isRequired,
+};
 
 export default TodoList;
