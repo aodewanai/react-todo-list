@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.TodoList{
+  display: flex;
+  justify-content: space-around;
+}
